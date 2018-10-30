@@ -1,0 +1,50 @@
+The 800-pound Gorilla in the corner: Data Integration
+
+
+Assignment # 2
+
+Group: CC
+
+Group Members: 
+Atique Ur Rehman Shahid
+Waleed Shah Din Butt
+Muhammad Ahsan Shahid
+ 
+Task 1: Error Detection
+1.	Data Quality Constraints
+All the mentioned data quality constraints (Capitalization of All Characters, State Column, City Column, ZIP Column and SSN Column) helped us to detect errors. 
+•	For State Column, We used online Web Table for matching state names with true state names i.e. https://www.50states.com/abbreviations.htm 
+•	For City Column, it is compared with a city column of downloaded Lookup Table.
+•	 For ZIP Column if there is any character in it and if its length is less than or greater than 5 than it is an error.
+•	Similarly, if there is any special character in SSN Column and its length is less than 8 and greater than 10 than it is also an error.
+
+2.	Precision, Recall and F1
+-----------------Error Detection Results-----------------
+•	Number of detected cells: 357590 (Number of changed values)
+•	Number of Correctly Detected cells: 335779 (cell was correctly identified as an error)
+•	Detection precision: 0.939005565033 (ratio of correctly detected cells over all detected cells)
+•	Detection recall: 0.86512884991 (ratio of correctly detected cells over all erroneous cells in the data)
+•	Detection F1: 0.90055463474
+
+
+	
+Task 2: Error Correction
+1.	Data Quality Constraints
+All the mentioned data quality constraints (Capitalization of All Characters, State Column, City Column, ZIP Column and SSN Column) and Jaro Distance Algorithm helped us to correct errors. 
+•	We used online Web Table for matching state names with true state names i.e. https://www.50states.com/abbreviations.htm  if there is a match between given input and web table entry than it is correct and if for any input Jaro Distance matching result is greater than 80% than the entry is replaced with correct value of web table otherwise that value is replaced with null.
+•	 Similarly, City Column is compared with a city column of downloaded Lookup Table, if there is a match between given input and lookup table entry than it is correct and if for any input Jaro Distance matching result is greater than 80% than the entry is replaced with correct value of lookup table otherwise that value is replaced with null. 
+•	For ZIP Column we just removed all the characters and just picked all the digits and if its length is less than 5 than just appended extra zeroes at its end and if it is greater than 5 than just picked first 5 digits by eliminating all others.
+•	Similarly, for SSN Column we just removed all the special characters and just picked all the digits and if its length is less than 8 than just appended extra zeroes at its end and if it is greater than 10 than just picked first 10 digits by eliminating all others.
+
+2.	Precision, Recall and F1
+-----------------Error Correction Results-----------------
+•	Destroyed clean cells: 21811 (cell was correct but has been transformed into a wrong value)
+•	Wrongly cleaned cells: 82643 (cell was wrong, but the cleaning was also not correct)
+•	Undetected cells: 52347 (cell was erroneous but was not touched)
+•	Number of cells that need yet to be cleaned: 156801 (sum of the 3 cell types above)
+•	Correction precision = 0.707894516066 (ratio of correctly corrected cells over all changed cells)
+•	Correction recall = 0.65220057404 (ratio of correctly corrected cells over all erroneous cells in the data)
+•	Correction F1: 0.678907251554
+
+
+

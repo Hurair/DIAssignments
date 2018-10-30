@@ -1,0 +1,119 @@
+The 800-pound Gorilla in the corner: Data Integration
+
+
+Assignment # 1
+
+Group: CC
+
+Group Members: 
+Atique Ur Rehman Shahid
+Waleed Shah Din Butt
+Muhammad Ahsan Shahid
+ 
+Task 1:
+1.	
+•	Algorithm
+
+Start
+Fetch All Headers of IMDB table in a list1.
+Fetch All Headers of Rotten Tomatoes table in a list2.
+
+Function FormatString (list)
+	Strip special characters from list
+	Convert all characters to lowercase in list
+End Function
+
+Call function FormatString (list1)
+Call function FormatString (list2)
+
+Loop for each element in a list1
+	Loop for each element in a list2
+		Result=Compare each element of list1 with all elements of list2 using 
+Jellyfish Jaro Distance Algorithm.
+If (result>80%)
+	Total_ Correspondences = Total_ Correspondences +1
+End if
+		End Loop
+	End Loop
+	Print (Total_ Correspondences)
+	End
+
+•	Input\Output
+
+Input = headers of all tables
+Output = Number of total Correspondences
+
+•	Time Complexity
+
+O(n²)
+
+
+2.	Affecting Parameters 
+•	Synonyms
+•	Suffixes and Prefixes
+•	Matching Characters in a string
+•	Number of Transpositions
+
+3.	Upsides
+•	It works fine with different forms of same word.
+•	Works fine with synonyms with same characters. E.g. Last Name and Family Name.
+Downsides
+•	Suffixes can cause problem. E.g. Employee and Employer.
+•	Do not Work fine with synonyms with different characters. E.g.  Sex and Gender.
+
+
+	
+Task 2:
+1.	
+•	Algorithm
+
+Start
+Fetch All Headers of IMDB table in a list1.
+Fetch All Headers of Rotten Tomatoes table in a list2.
+
+Function FormatString (list)
+	Strip special characters from list
+	Convert all characters to lowercase in list
+End Function
+
+Call function FormatString (list1)
+Call function FormatString (list2)
+
+Loop for each element in a list1
+	Loop for each element in a list2
+		Result=Compare each element of list1 with all elements of list2 using 
+Jellyfish Jaro Distance Algorithm.
+If(result>80%)
+	Total_ Correspondences = Total_ Correspondences +1
+End if
+		End Loop
+	End Loop
+	Print (Total_ Correspondences)
+	End
+
+•	Input\Output
+
+Input = Each element of all the data set
+	Output = Each element of a table corresponds to which column of 			    another table.
+
+•	Time Complexity
+
+O(n4)
+
+
+2.	Affecting Parameters 
+•	Synonyms
+•	Suffixes and Prefixes
+•	Matching Characters in a string
+•	Number of Transpositions
+
+3.	Upsides
+•	It works fine with different forms of same word.
+•	Works fine with synonyms with same characters. E.g. Last Name and Family Name.
+Downsides
+•	Suffixes can cause problem. E.g. Employee and Employer.
+•	Do not Work fine with synonyms with different characters. E.g.  Sex and Gender.
+
+
+
+
